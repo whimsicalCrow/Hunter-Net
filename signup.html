@@ -382,6 +382,9 @@ function displayContent() {
     document.getElementById('content').style.display = 'block';
 }
 
+let signupForm;
+let signupMessage;
+
 function handleSignupClick() {
     if (!signupForm || !signupMessage) {
         return;
@@ -394,15 +397,12 @@ function handleSignupClick() {
     signupMessage.style.display = 'block';
 }
 
-let signupForm;
-let signupMessage;
-
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
     signupForm = document.getElementById('signup-form');
     signupMessage = document.getElementById('signup-message');
 
-    var signupButton = document.getElementById('signup-button');
+    const signupButton = document.getElementById('signup-button');
 
     if (signupButton) {
         signupButton.addEventListener('click', handleSignupClick);
