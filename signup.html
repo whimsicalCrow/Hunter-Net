@@ -344,9 +344,7 @@ Overflow-y:scroll; //add vertical bar option in html
     
     <button id="signup-button" type="button">Sign Up</button>
   </form>
-  <p id="signup-message" role="status" aria-live="polite" style="color:white; display:none; margin-top:15px;">
-    Sign up requests are not available from this static site yet. Please contact the site owner directly for access.
-  </p>
+  <p id="signup-message" role="status" aria-live="polite" style="color:white; margin-top:15px;"></p>
 </blockquote>
 <br>
 
@@ -397,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        signupMessage.style.display = 'block';
+        signupMessage.textContent = 'Sign up requests are not available from this static site yet. Please contact the site owner directly for access.';
     }
 
     if (signupButton) {
