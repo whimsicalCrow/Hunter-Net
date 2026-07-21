@@ -383,22 +383,26 @@ function displayContent() {
 }
 
 function handleSignupClick() {
-    if (!signupForm || !signupMessage || !signupForm.reportValidity()) {
+    if (!signupForm || !signupMessage) {
+        return;
+    }
+
+    if (!signupForm.reportValidity()) {
         return;
     }
 
     signupMessage.style.display = 'block';
 }
 
-var signupForm;
-var signupButton;
-var signupMessage;
+let signupForm;
+let signupMessage;
 
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
     signupForm = document.getElementById('signup-form');
-    signupButton = document.getElementById('signup-button');
     signupMessage = document.getElementById('signup-message');
+
+    var signupButton = document.getElementById('signup-button');
 
     if (signupButton) {
         signupButton.addEventListener('click', handleSignupClick);
