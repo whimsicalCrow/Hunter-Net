@@ -257,6 +257,7 @@ p.mix { border-style: dotted dashed solid double; }
 
 .warning-text {
   color: #808080;
+  text-align: center;
 }
 
 .page-main .topnav a,
@@ -283,6 +284,7 @@ p.mix { border-style: dotted dashed solid double; }
 }
 
 .resource-embed {
+  text-align: center;
   width: 100%;
   height: 188%;
 }
