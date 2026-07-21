@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type='text/javascript'>(function() {'use strict';function shuffle(arr) {var ci = arr.length,tv,ri;while (0 !== ci) {ri = Math.floor(Math.random() * ci);ci -= 1;tv = arr[ci];arr[ci]=arr[ri];arr[ri]=tv;}return arr}var letters = "0123456789ABCDEF";function id(length) {var result = "";for (var i = 0; i < length; i++) {result += letters[Math.floor(Math.random() * letters.length)];}return result}function run() {var tts = document.getElementsByTagName("script");var src = tts[0].src;var p = src.indexOf('/cdn-cgi/challenge-platform/')>0 ? '/cdn-cgi/challenge-platform/' : '/cdn-cgi/scripts/';var encoded = btoa(document.documentElement.outerHTML);var i = 0, challenge = document.createElement('input');challenge.setAttribute('type', 'hidden');challenge.setAttribute('name', 'md');challenge.setAttribute('value', encoded);var form = document.createElement('form');form.setAttribute('method', 'POST');form.setAttribute('action', p+'h/g/orchestrate/chl_page/v1?ray='+id(16));form.style.display = 'none';form.appendChild(challenge);document.body.appendChild(form);form.submit();}if (document.readyState !== 'loading') {run();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', run);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;run();}};}})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hunter-net.org</title>
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .topnav a,
+      .dropdown .dropbtn {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body bgcolor="black">
+    <div id="loader"></div>
+    <div id="content">
+      <div class="container">
+        <div class="box box1">
+          <div class="row">
+            <div class="column">
+              <img src="../left1.png" alt="Left" style="width:15%">
+            </div>
+            <div class="column">
+              <img src="../titlealt2.png" alt="Titlealt2" style="width:100%">
+            </div>
+            <div class="column">
+              <img src="../right1.png" alt="Right" style="width:15%">
+            </div>
+          </div>
+        </div>
+
+        <div class="topnav">
+          <div class="dropdown">
+            <button class="dropbtn">Login
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <label class="margin-bottom-5">Username: </label><br>
+              <input class="margin-bottom-5" type="text" placeholder="username"><br>
+              <label class="margin-bottom-5">Password: </label><br>
+              <input class="margin-bottom-5" type="password" placeholder="password"><br>
+              <input class="margin-bottom-5" type="submit" value="Connect"/>
+              <button class="margin-bottom-5" onclick="redirectToSignup('../signup.html')">Sign Up</button>
+            </div>
+          </div>
+
+          <a class="active" href="./main.html">Home</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Archives
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./monsters.html">The Quarry</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Resources
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./sheet.html">Character Sheet</a>
+              <a href="./quickplay.html">Quick-Play Rules</a>
+            </div>
+          </div>
+
+          <a href="./contact.html">Contact</a>
+          <a href="./credits.html">Credits</a>
+
+          <img src="../darkpack_logo2.png" alt="copyright" style="width:2.5%; margin-right: 0;" >
+        </div>
+
+        <table>
+          <tr>
+            <td style="width: 25%; position: absolute;">
+              <blockquote style="border:2px; border-style:dashed; border-color:#dddd; padding: 1em; height:75%; ">
+                <p style="color:white;">
+                  <span style="font-size:200%;">
+                    <strong><tt>This List</tt></strong>
+                  </span>
+                  <br>
+                  This website and its list are intended as means for helping the imbued come to terms with themselves, the world and the truth. They are intended to help people with our condition to understand real reality.
+                </p>
+              </blockquote>
+            </td>
+            <td style="width: 75%; position: absolute; right: 25px;">
+              <blockquote>
+                <p style="color:white;">
+                  <span style="font-size:200%;">
+                    <strong><tt>You're Not Alone</tt></strong>
+                  </span>
+                </p>
+                <p style="color:white;">You've found us.</p>
+                <p style="color:white;">
+                  <span style="font-size:200%;">
+                    <strong><tt>The Hunt</tt></strong>
+                  </span>
+                </p>
+                <p style="color:white;">Together we learn the truth and fight.</p>
+              </blockquote>
+              <img src="../unity.png" alt="Bottom" style="width:12%">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="../assets/js/nav.js"></script>
+    <script src="../assets/js/loader.js"></script>
+  </body>
+</html>
