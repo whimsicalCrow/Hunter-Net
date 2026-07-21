@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# PHP / Server
+*.log
+/vendor/
+
+# Sensitive config — if you create a local db config, keep it out of the repo
+db.local.php
+config.local.php
