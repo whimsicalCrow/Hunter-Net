@@ -195,3 +195,109 @@ p.mix { border-style: dotted dashed solid double; }
   text-align: center;
   color: white;
 }
+
+
+/* Centralized page/component styles migrated from inline HTML */
+.darkpack-logo {
+  width: 2.5%;
+  margin-right: 0;
+}
+
+.header-side-img { width: 15%; }
+.header-title-img { width: 100%; }
+
+.active-dropbtn { background-color: #8B4000 !important; }
+
+.text-white { color: white; }
+.text-xl { font-size: 200%; }
+.text-left { text-align: left; }
+
+.dashed-panel {
+  border: 2px dashed #dddd;
+  padding: 1em;
+  height: 75%;
+}
+
+.content-column-30 { width: 30%; }
+.padded-left-right-50 { padding-left: 50px; padding-right: 50px; }
+.float-left { float: left; }
+.margin-left-50 { margin-left: 50px; }
+.clear-both { clear: both; }
+
+.folder-icon {
+  float: left;
+  margin-right: 15px;
+  width: 90px;
+  height: 80px;
+}
+
+.main-left-column {
+  width: 25%;
+  position: absolute;
+}
+
+.main-right-column {
+  width: 75%;
+  position: absolute;
+  right: 25px;
+}
+
+.unity-main { width: 12%; }
+.unity-standard { width: 8%; }
+.unity-resource { width: 6%; }
+.unity-monsters {
+  width: 8%;
+  position: relative;
+  top: 132px;
+}
+
+.unity-contact {
+  width: 8%;
+  position: relative;
+  top: 50px;
+}
+
+.warning-text {
+  color: #808080;
+  text-align: center;
+}
+
+.page-main .topnav a,
+.page-main .dropdown .dropbtn {
+  font-size: 16px;
+}
+
+.map-frame {
+  border-width: 0;
+  position: relative;
+  top: 50px;
+}
+
+.contact-chat-table {
+  background-repeat: yes;
+  line-height: 1.5em;
+}
+
+.resource-embed {
+  text-align: center;
+  width: 100%;
+  height: 188%;
+}
+
+.signup-table {
+  margin-top: 40px;
+  width: 40%;
+}
+
+.signup-table-cell { width: 50%; }
+
+.signup-heading { color: #8B4000; }
+
+.signup-message {
+  color: white;
+  margin-top: 15px;
+}
+
+.signup-form label {
+  color: white;
+}
