@@ -382,17 +382,28 @@ function displayContent() {
     document.getElementById('content').style.display = 'block';
 }
 
+function handleSignupClick() {
+    if (!signupForm || !signupMessage || !signupForm.reportValidity()) {
+        return;
+    }
+
+    signupMessage.style.display = 'block';
+}
+
+var signupForm;
+var signupButton;
+var signupMessage;
+
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
-    document.getElementById('signup-button').addEventListener('click', function() {
-        var signupForm = document.getElementById('signup-form');
+    signupForm = document.getElementById('signup-form');
+    signupButton = document.getElementById('signup-button');
+    signupMessage = document.getElementById('signup-message');
 
-        if (!signupForm.reportValidity()) {
-            return;
-        }
+    if (signupButton) {
+        signupButton.addEventListener('click', handleSignupClick);
+    }
 
-        document.getElementById('signup-message').style.display = 'block';
-    });
     loadNow(1);
 });
 </script>
