@@ -332,7 +332,7 @@ Overflow-y:scroll; //add vertical bar option in html
 <blockquote style= "border:2px; border-style:dashed; border-color:#dddd; padding: 1em; height:75%;">
    <h2 style="color:#8B4000" >Sign Up</h2>
   
-  <form action="signup.php" method="post">
+  <form id="signup-form">
     <label for="name" style="color:white">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -344,6 +344,9 @@ Overflow-y:scroll; //add vertical bar option in html
     
     <input type="submit" value="Sign Up">
   </form>
+  <p id="signup-message" style="color:white; display:none; margin-top:15px;">
+    Sign-up requests are not available from this static site yet. Please contact the site owner directly for access.
+  </p>
 </blockquote>
 <br>
 
@@ -381,6 +384,10 @@ function displayContent() {
 
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('signup-message').style.display = 'block';
+    });
     loadNow(1);
 });
 </script>
