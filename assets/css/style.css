@@ -289,7 +289,7 @@ p.mix { border-style: dotted dashed solid double; }
 .resource-embed {
   text-align: center;
   width: 100%;
-  height: 188vh;
+  height: 188%;
 }
 
 .signup-table {
