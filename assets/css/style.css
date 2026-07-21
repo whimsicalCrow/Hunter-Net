@@ -274,8 +274,16 @@ p.mix { border-style: dotted dashed solid double; }
 }
 
 .contact-chat-table {
-  background-repeat: repeat;
   line-height: 1.5em;
+  width: 510px;
+  margin: 0 auto;
+  border: 0;
+  border-color: black;
+  border-spacing: 0;
+}
+
+.contact-chat-table td {
+  padding: 5px;
 }
 
 .resource-embed {
