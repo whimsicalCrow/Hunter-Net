@@ -206,7 +206,7 @@ p.mix { border-style: dotted dashed solid double; }
 .header-side-img { width: 15%; }
 .header-title-img { width: 100%; }
 
-.active-dropbtn { background-color: #8B4000 !important; }
+.dropdown .dropbtn.active-dropbtn { background-color: #8B4000; }
 
 .text-white { color: white; }
 .text-xl { font-size: 200%; }
@@ -274,7 +274,7 @@ p.mix { border-style: dotted dashed solid double; }
 }
 
 .contact-chat-table {
-  background-repeat: yes;
+  background-repeat: repeat;
   line-height: 1.5em;
 }
 
