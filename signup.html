@@ -345,7 +345,7 @@ Overflow-y:scroll; //add vertical bar option in html
     <button id="signup-button" type="button">Sign Up</button>
   </form>
   <p id="signup-message" role="status" aria-live="polite" style="color:white; display:none; margin-top:15px;">
-    Sign-up requests are not available from this static site yet. Please contact the site owner directly for access.
+    Sign up requests are not available from this static site yet. Please contact the site owner directly for access.
   </p>
 </blockquote>
 <br>
@@ -382,27 +382,23 @@ function displayContent() {
     document.getElementById('content').style.display = 'block';
 }
 
-let signupForm;
-let signupMessage;
-
-function handleSignupClick() {
-    if (!signupForm || !signupMessage) {
-        return;
-    }
-
-    if (!signupForm.reportValidity()) {
-        return;
-    }
-
-    signupMessage.style.display = 'block';
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
-    signupForm = document.getElementById('signup-form');
-    signupMessage = document.getElementById('signup-message');
-
+    const signupForm = document.getElementById('signup-form');
+    const signupMessage = document.getElementById('signup-message');
     const signupButton = document.getElementById('signup-button');
+
+    function handleSignupClick() {
+        if (!signupForm || !signupMessage) {
+            return;
+        }
+
+        if (!signupForm.reportValidity()) {
+            return;
+        }
+
+        signupMessage.style.display = 'block';
+    }
 
     if (signupButton) {
         signupButton.addEventListener('click', handleSignupClick);
