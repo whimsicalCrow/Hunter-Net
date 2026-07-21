@@ -332,7 +332,7 @@ Overflow-y:scroll; //add vertical bar option in html
 <blockquote style= "border:2px; border-style:dashed; border-color:#dddd; padding: 1em; height:75%;">
    <h2 style="color:#8B4000" >Sign Up</h2>
   
-  <form action="signup.php" method="post">
+  <form id="signup-form">
     <label for="name" style="color:white">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -342,8 +342,9 @@ Overflow-y:scroll; //add vertical bar option in html
     <label for="password" style="color:white">Password:</label>
     <input type="password" id="password" name="password" required>
     
-    <input type="submit" value="Sign Up">
+    <button id="signup-button" type="button">Sign Up</button>
   </form>
+  <p id="signup-message" role="status" aria-live="polite" style="color:white; margin-top:15px;"></p>
 </blockquote>
 <br>
 
@@ -381,6 +382,26 @@ function displayContent() {
 
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
+    const signupForm = document.getElementById('signup-form');
+    const signupMessage = document.getElementById('signup-message');
+    const signupButton = document.getElementById('signup-button');
+
+    function handleSignupClick() {
+        if (!signupForm || !signupMessage) {
+            return;
+        }
+
+        if (!signupForm.reportValidity()) {
+            return;
+        }
+
+        signupMessage.textContent = 'Sign up is currently unavailable. Please use the Contact page to request access.';
+    }
+
+    if (signupButton) {
+        signupButton.addEventListener('click', handleSignupClick);
+    }
+
     loadNow(1);
 });
 </script>
