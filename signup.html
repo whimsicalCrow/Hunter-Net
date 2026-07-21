@@ -342,9 +342,9 @@ Overflow-y:scroll; //add vertical bar option in html
     <label for="password" style="color:white">Password:</label>
     <input type="password" id="password" name="password" required>
     
-    <input type="submit" value="Sign Up">
+    <button id="signup-button" type="button">Sign Up</button>
   </form>
-  <p id="signup-message" style="color:white; display:none; margin-top:15px;">
+  <p id="signup-message" role="status" aria-live="polite" style="color:white; display:none; margin-top:15px;">
     Sign-up requests are not available from this static site yet. Please contact the site owner directly for access.
   </p>
 </blockquote>
@@ -384,8 +384,13 @@ function displayContent() {
 
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.getElementById('loader');
-    document.getElementById('signup-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+    document.getElementById('signup-button').addEventListener('click', function() {
+        var signupForm = document.getElementById('signup-form');
+
+        if (!signupForm.reportValidity()) {
+            return;
+        }
+
         document.getElementById('signup-message').style.display = 'block';
     });
     loadNow(1);
