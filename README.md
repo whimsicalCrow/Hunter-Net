@@ -33,10 +33,33 @@ Hunter-Net/
 
 ## Getting Started
 
-1. Clone the repository
-2. Serve the files locally (e.g., using a local web server)
-3. Access `index.html` as the entry point
-4. Use password: `reckoning` to proceed
+### Quick Local Deployment
+
+**Option 1: Python (Recommended)**
+```bash
+python serve.py
+```
+
+**Option 2: Node.js**
+```bash
+npx http-server -p 8000
+```
+
+**Option 3: VS Code Live Server**
+- Install Live Server extension
+- Right-click `index.html` → Open with Live Server
+
+Then navigate to `http://localhost:8000` and enter password: `reckoning`
+
+For detailed setup instructions, see [SETUP.md](SETUP.md)
+
+### Accessing the Site
+
+1. Open `http://localhost:8000` in your browser
+2. Enter password: `reckoning` (Hint: What Do We Fight For?)
+3. Browse and explore the site
+
+**Offline Mode**: The site is fully functional offline once loaded. External services (map, chat) on the Contact page require internet.
 
 ## File Organization
 

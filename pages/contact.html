@@ -21,12 +21,44 @@
 
         <div>
           <center>
-            <iframe src="https://map.proxi.co/r/v1p_IUjiq0EdxdWZLRXn" allow="geolocation; clipboard-write" width="640px" height="590px" class="map-frame" allowfullscreen></iframe>
+            <div id="map-container" style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: #f0f0f0;">
+              <iframe id="map-frame" src="https://map.proxi.co/r/v1p_IUjiq0EdxdWZLRXn" allow="geolocation; clipboard-write" width="640px" height="590px" class="map-frame" allowfullscreen></iframe>
+              <p id="map-fallback" style="display:none; text-align: center; color: #666;">
+                Map service unavailable. This feature requires an internet connection.
+              </p>
+            </div>
           </center>
           <table class="contact-chat-table"><tbody><tr><td>
-            <center><iframe src="https://www5.cbox.ws/box/?boxid=940074&amp;boxtag=pTsjkB" allowtransparency="yes" allow="autoplay" marginheight="0" marginwidth="0" scrolling="auto" width="640" height="200" frameborder="0"></iframe></center>
+            <center>
+              <div id="chat-container" style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: #f0f0f0;">
+                <iframe id="chat-frame" src="https://www5.cbox.ws/box/?boxid=940074&amp;boxtag=pTsjkB" allowtransparency="yes" allow="autoplay" marginheight="0" marginwidth="0" scrolling="auto" width="640" height="200" frameborder="0"></iframe>
+                <p id="chat-fallback" style="display:none; text-align: center; color: #666;">
+                  Chat service unavailable. This feature requires an internet connection.
+                </p>
+              </div>
+            </center>
           </td></tr></tbody></table>
         </div>
+        
+        <script>
+          // Graceful fallback for offline iframes
+          function checkIframeConnection() {
+            fetch('https://map.proxi.co/r/v1p_IUjiq0EdxdWZLRXn', {method: 'HEAD', mode: 'no-cors'})
+              .catch(function() {
+                document.getElementById('map-frame').style.display = 'none';
+                document.getElementById('map-fallback').style.display = 'block';
+              });
+            
+            fetch('https://www5.cbox.ws/box/', {method: 'HEAD', mode: 'no-cors'})
+              .catch(function() {
+                document.getElementById('chat-frame').style.display = 'none';
+                document.getElementById('chat-fallback').style.display = 'block';
+              });
+          }
+          
+          // Check after 3 seconds if iframes loaded
+          setTimeout(checkIframeConnection, 3000);
+        </script>
 
         <img src="../assets/images/unity.png" alt="Bottom" class="unity-contact">
       </div>
