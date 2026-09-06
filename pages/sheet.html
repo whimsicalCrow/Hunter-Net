@@ -19,12 +19,84 @@
           <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
         </div>
 
-        <embed src="../assets/images/Hunter_5thEdition_Vigil_2-Page_Interactive.pdf" class="resource-embed" type="application/pdf">
-        <img src="../assets/images/unity.png" alt="Bottom" class="unity-resource">
+        <main class="sheet-app">
+          <div class="sheet-toolbar">
+            <div>
+              <p class="sheet-kicker">Hunter: The Reckoning</p>
+              <h1>Character Sheet</h1>
+              <p class="sheet-status" id="sheet-status" aria-live="polite">Your changes are saved in this browser.</p>
+            </div>
+            <div class="sheet-actions">
+              <button type="button" class="sheet-button" id="reset-sheet">Reset</button>
+              <button type="button" class="sheet-button sheet-button-primary" id="export-sheet">Export filled PDF</button>
+            </div>
+          </div>
+
+          <form id="character-sheet">
+            <section class="sheet-page">
+              <header class="sheet-masthead">
+                <span class="sheet-brand">HUNTER</span>
+                <span class="sheet-subtitle">THE RECKONING</span>
+              </header>
+
+              <div class="identity-grid">
+                <label>Name<input name="name" type="text"></label>
+                <label>Ambition<input name="ambition" type="text"></label>
+                <label>Creed<select name="creed"><option value=""></option><option>Avenger</option><option>Innocent</option><option>Judge</option><option>Martyr</option><option>Redeemer</option><option>Visionary</option></select></label>
+                <label>Concept<input name="concept" type="text"></label>
+                <label>Desire<input name="desire" type="text"></label>
+                <label>Drive<input name="drive" type="text"></label>
+                <label>Chronicle<input name="chronicle" type="text"></label>
+                <label>Redemption<input name="redemption" type="text"></label>
+                <label>Cell<input name="cell" type="text"></label>
+              </div>
+
+              <div class="sheet-section-title">Attributes</div>
+              <div class="attribute-columns">
+                <div class="attribute-group"><h2>Physical</h2><div class="tracker-row"><label>Strength</label><div class="dots" data-name="strength"></div></div><div class="tracker-row"><label>Dexterity</label><div class="dots" data-name="dexterity"></div></div><div class="tracker-row"><label>Stamina</label><div class="dots" data-name="stamina"></div></div></div>
+                <div class="attribute-group"><h2>Social</h2><div class="tracker-row"><label>Charisma</label><div class="dots" data-name="charisma"></div></div><div class="tracker-row"><label>Manipulation</label><div class="dots" data-name="manipulation"></div></div><div class="tracker-row"><label>Composure</label><div class="dots" data-name="composure"></div></div></div>
+                <div class="attribute-group"><h2>Mental</h2><div class="tracker-row"><label>Intelligence</label><div class="dots" data-name="intelligence"></div></div><div class="tracker-row"><label>Wits</label><div class="dots" data-name="wits"></div></div><div class="tracker-row"><label>Resolve</label><div class="dots" data-name="resolve"></div></div></div>
+              </div>
+
+              <div class="sheet-section-title">Skills</div>
+              <div class="skill-columns">
+                <div class="skill-column" data-skills="Athletics,Brawl,Craft,Drive,Firearms,Larceny,Melee,Stealth,Survival"></div>
+                <div class="skill-column" data-skills="Animal Ken,Etiquette,Insight,Intimidation,Leadership,Performance,Persuasion,Streetwise,Subterfuge"></div>
+                <div class="skill-column" data-skills="Academics,Awareness,Finance,Investigation,Medicine,Occult,Politics,Science,Technology"></div>
+              </div>
+
+              <div class="lower-grid">
+                <section><div class="sheet-section-title">Edges &amp; Perks</div><div class="lined-list" data-rows="12" data-prefix="perk"></div></section>
+                <aside class="resource-trackers"><div class="box-heading">Health</div><div class="boxes" data-name="health" data-count="15"></div><div class="box-heading">Willpower</div><div class="boxes" data-name="willpower" data-count="15"></div><label class="despair-toggle"><input name="despair" type="checkbox"> Despair</label><label>Chronicle Tenets<textarea name="tenets" rows="4"></textarea></label><label>Touchstones<textarea name="touchstones" rows="4"></textarea></label><label>Creed Fields<textarea name="creed-fields" rows="4"></textarea></label></aside>
+              </div>
+            </section>
+
+            <section class="sheet-page sheet-page-two">
+              <div class="page-two-grid">
+                <div>
+                  <div class="sheet-section-title">Advantages</div>
+                  <h2 class="subheading">Backgrounds</h2><div class="rated-list" data-rows="7" data-prefix="background"></div>
+                  <h2 class="subheading">Merits</h2><div class="rated-list" data-rows="7" data-prefix="merit"></div>
+                  <h2 class="subheading">Flaws</h2><div class="rated-list" data-rows="7" data-prefix="flaw"></div>
+                  <div class="sheet-section-title">Weapons</div><div class="weapon-list" data-rows="8"></div>
+                  <div class="sheet-section-title experience-title">Experience</div><label>Total<input name="experience-total" type="number" min="0"></label><label>Spent<input name="experience-spent" type="number" min="0"></label>
+                </div>
+                <div>
+                  <div class="sheet-section-title">Biography</div>
+                  <div class="bio-meta"><label>Age<input name="age" type="text"></label><label>Apparent Age<input name="apparent-age" type="text"></label><label>Date of Birth<input name="date-of-birth" type="text"></label></div>
+                  <label>Appearance<textarea name="appearance" rows="6"></textarea></label><label>Distinguishing Features<textarea name="features" rows="5"></textarea></label><label>History<textarea name="history" rows="12"></textarea></label>
+                  <div class="sheet-section-title">Possessions</div><textarea name="possessions" rows="8"></textarea>
+                  <div class="sheet-section-title">Notes</div><textarea name="notes" rows="11"></textarea>
+                </div>
+              </div>
+            </section>
+          </form>
+        </main>
       </div>
     </div>
 
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
+    <script src="../assets/js/sheet.js"></script>
   </body>
 </html>
