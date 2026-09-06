@@ -10,7 +10,8 @@
     <div id="content">
       <div class="container sheet-container">
         <div class="topnav">
-          <div class="dropdown"><button class="dropbtn">Login</button><div class="dropdown-content"><button onclick="redirectToSignup('../assets/images/signup.html')">Sign Up</button></div></div>
+          <span class="session-user" aria-live="polite"></span>
+          <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
           <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
           <div class="dropdown"><button class="dropbtn active-dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>

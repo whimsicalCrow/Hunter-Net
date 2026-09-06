@@ -10,13 +10,14 @@
     <div id="content">
       <div class="container">
         <div class="topnav">
-          <div class="dropdown"><button class="dropbtn">Login</button><div class="dropdown-content"><button onclick="redirectToSignup('../assets/images/signup.html')">Sign Up</button></div></div>
+          <span class="session-user" aria-live="polite"></span>
+          <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
           <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
           <div class="dropdown"><button class="dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>
           <a href="./contact.html">Contact</a>
           <a class="active" href="./credits.html">Credits</a>
-          <img src="../assets/images/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo" onerror="this.src='../assets/images/darkpack_logo2.png'" >
+          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
         </div>
 
         <table>

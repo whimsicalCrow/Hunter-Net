@@ -10,29 +10,19 @@
     <div id="content">
       <div class="container">
         <div class="center">
-          <p class="warning-text">
-            <strong><font face="Arial">NOT SAFE YET -- THEY'RE WATCHING</font></strong>
-          </p>
-          <div>
-            <input type="password" id="password" name="password">
-          </div>
-          <input type="submit" value="Submit" onclick="checkPassword()">
-          <script>
-            function checkPassword() {
-              if (document.getElementById('password').value == 'reckoning') {
-                location.href = "pages/main.html";
-              } else {
-                alert('You do not belong here.');
-                return false;
-              }
-            }
-          </script>
+          <p class="warning-text"><strong>NOT SAFE YET -- THEY'RE WATCHING</strong></p>
+          <form id="access-form">
+            <label for="name">Enter your name</label>
+            <input type="text" id="name" name="name" maxlength="40" required autocomplete="nickname">
+            <input type="submit" value="Enter">
+          </form>
         </div>
 
-        <div id="footer"> Password Hint: What Do We Fight For?</div>
+        <div id="footer">Your name is saved only in this browser.</div>
         <img src="assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
       </div>
     </div>
     <script src="assets/js/loader.js"></script>
+    <script src="assets/js/auth.js"></script>
   </body>
 </html>

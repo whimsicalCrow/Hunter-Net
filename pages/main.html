@@ -24,19 +24,8 @@
         </div>
 
         <div class="topnav">
-          <div class="dropdown">
-            <button class="dropbtn">Login
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <label class="margin-bottom-5">Username: </label><br>
-              <input class="margin-bottom-5" type="text" placeholder="username"><br>
-              <label class="margin-bottom-5">Password: </label><br>
-              <input class="margin-bottom-5" type="password" placeholder="password"><br>
-              <input class="margin-bottom-5" type="submit" value="Connect"/>
-              <button class="margin-bottom-5" onclick="redirectToSignup('../assets/images/signup.html')">Sign Up</button>
-            </div>
-          </div>
+          <span class="session-user" aria-live="polite"></span>
+          <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
 
           <a class="active" href="./main.html">Home</a>
 

@@ -10,7 +10,8 @@
     <div id="content">
       <div class="container">
         <div class="topnav">
-          <div class="dropdown"><button class="dropbtn">Login</button><div class="dropdown-content"><button onclick="redirectToSignup('../assets/images/signup.html')">Sign Up</button></div></div>
+          <span class="session-user" aria-live="polite"></span>
+          <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
           <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
           <div class="dropdown"><button class="dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>
@@ -21,18 +22,18 @@
 
         <div>
           <center>
-            <div id="map-container" style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: #f0f0f0;">
+            <div id="map-container" class="external-service">
               <iframe id="map-frame" src="https://map.proxi.co/r/v1p_IUjiq0EdxdWZLRXn" allow="geolocation; clipboard-write" width="640px" height="590px" class="map-frame" allowfullscreen></iframe>
-              <p id="map-fallback" style="display:none; text-align: center; color: #666;">
+              <p id="map-fallback" hidden>
                 Map service unavailable. This feature requires an internet connection.
               </p>
             </div>
           </center>
           <table class="contact-chat-table"><tbody><tr><td>
             <center>
-              <div id="chat-container" style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: #f0f0f0;">
+              <div id="chat-container" class="external-service">
                 <iframe id="chat-frame" src="https://www5.cbox.ws/box/?boxid=940074&amp;boxtag=pTsjkB" allowtransparency="yes" allow="autoplay" marginheight="0" marginwidth="0" scrolling="auto" width="640" height="200" frameborder="0"></iframe>
-                <p id="chat-fallback" style="display:none; text-align: center; color: #666;">
+                <p id="chat-fallback" hidden>
                   Chat service unavailable. This feature requires an internet connection.
                 </p>
               </div>
@@ -40,31 +41,12 @@
           </td></tr></tbody></table>
         </div>
         
-        <script>
-          // Graceful fallback for offline iframes
-          function checkIframeConnection() {
-            fetch('https://map.proxi.co/r/v1p_IUjiq0EdxdWZLRXn', {method: 'HEAD', mode: 'no-cors'})
-              .catch(function() {
-                document.getElementById('map-frame').style.display = 'none';
-                document.getElementById('map-fallback').style.display = 'block';
-              });
-            
-            fetch('https://www5.cbox.ws/box/', {method: 'HEAD', mode: 'no-cors'})
-              .catch(function() {
-                document.getElementById('chat-frame').style.display = 'none';
-                document.getElementById('chat-fallback').style.display = 'block';
-              });
-          }
-          
-          // Check after 3 seconds if iframes loaded
-          setTimeout(checkIframeConnection, 3000);
-        </script>
-
         <img src="../assets/images/unity.png" alt="Bottom" class="unity-contact">
       </div>
     </div>
 
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
+    <script src="../assets/js/contact.js"></script>
   </body>
 </html>

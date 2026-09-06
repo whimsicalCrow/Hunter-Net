@@ -14,11 +14,15 @@ Hunter-Net/
 ├── .gitignore
 ├── assets/
 │   ├── css/
-│   │   └── style.css      # Main stylesheet
+│   │   └── style.css      # Shared and page-specific presentation
 │   ├── js/
-│   │   ├── loader.js      # Page loader script
-│   │   └── nav.js         # Navigation script
-│   └── images/            # All images and PDFs
+│   │   ├── auth.js        # Landing-page access behavior
+│   │   ├── contact.js     # External-service fallback behavior
+│   │   ├── loader.js      # Shared page loader
+│   │   ├── nav.js         # Shared navigation behavior
+│   │   ├── sheet.js       # Character-sheet state and persistence
+│   │   └── signup.js      # Signup form behavior
+│   └── images/            # Images and PDF resources
 │       ├── *.png
 │       ├── *.gif
 │       └── *.pdf
@@ -61,10 +65,23 @@ For detailed setup instructions, see [SETUP.md](SETUP.md)
 
 **Offline Mode**: The site is fully functional offline once loaded. External services (map, chat) on the Contact page require internet.
 
+## Architecture
+
+Hunter-Net is a static frontend. It currently has no backend or persistent user account service.
+
+- **HTML** contains page content and declarative `data-*` hooks.
+- **CSS** contains shared layout, component, and character-sheet presentation.
+- **JavaScript** contains browser behavior, separated by feature instead of embedded in HTML.
+- **serve.py** and **serve.js** are local development servers only; GitHub Pages serves the static files directly.
+
+The shared navigation supports a temporary name-only session. A visitor can enter a display name without verification; it is stored in browser `localStorage` under `hunter-net-session-name`, restored on later page loads, and removed by **Log out**. This is a convenience identity, not authentication, and it is limited to the current browser profile.
+
+The signup form is intentionally a frontend placeholder. It validates the form locally and directs users to the Contact page because no account API exists yet.
+
 ## File Organization
 
 - **Root**: Contains only the main entry points (index.html, 404.html, signup.html)
 - **pages/**: Contains all secondary content pages
 - **assets/css/**: Centralized stylesheets
-- **assets/js/**: JavaScript utilities
-- **assets/images/**: All images and PDF documents
+- **assets/js/**: Feature-scoped browser modules
+- **assets/images/**: Images and PDF documents
