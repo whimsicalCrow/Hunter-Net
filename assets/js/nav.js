@@ -54,6 +54,7 @@
     client.auth.signOut().then(function (result) {
       logout.disabled = false;
       if (result.error) logout.closest('.topnav').querySelector('.session-user').textContent = 'Sign-out failed';
+      else window.location.href = './index.html';
     });
   });
 })();

@@ -65,23 +65,21 @@ Open the project folder and drag `index.html` into your browser.
 
 ## Accessing the Site
 
-1. **Landing Page**: Navigate to `http://localhost:8000`
-2. **Enter Password**: The default password is `reckoning`
-3. **Browse Site**: Explore all pages locally
-
-### Password Hint
-> What Do We Fight For?
+1. Navigate to `http://localhost:8000`; the root redirects to `pages/index.html`.
+2. Sign in with your Supabase username and password, or create an account at `signup.html`.
+3. Browse the site. Shared archives and chat require an authenticated Supabase session.
 
 ---
 
-## Offline Mode
+## Online Services
 
-The site is **fully functional offline** once loaded:
+The site needs an internet connection for:
 
-- ✓ All pages work without internet
-- ✓ All images and PDFs load locally
-- ✓ Navigation works completely offline
-- ⚠️ External services on contact page won't work offline (map and chat)
+- Supabase authentication, shared archive data, and realtime chat.
+- The map embed on the Contact page.
+- The Supabase JavaScript client loaded from its CDN.
+
+The character sheet itself stores edits in the current browser.
 
 ---
 
@@ -96,9 +94,10 @@ The port 8000 is already in use. Either:
 - Ensure you're using a server (not file:// protocol)
 - Check that the `assets/images/` folder exists with files
 
-### Password not working
-- Make sure you enter `reckoning` exactly (case-sensitive)
-- Clear browser cache and reload
+### Sign-in or sign-up not working
+- Confirm the Supabase username-auth setup in [Supabase Username Accounts](#supabase-username-accounts).
+- Make sure **Allow new users to sign up** is enabled for new registrations.
+- Clear browser cache and reload after deploying frontend changes.
 
 ### External services not available
 - Map and chat on the Contact page require internet
@@ -116,13 +115,14 @@ Hunter-Net/
 ├── serve.py            ← Python server script
 ├── README.md
 ├── SETUP.md            ← This file
-├── pages/              ← All content pages
+├── pages/              ← Login and content pages
 │   ├── main.html
 │   ├── monsters.html
 │   ├── contact.html
 │   ├── sheet.html
 │   ├── quickplay.html
 │   └── credits.html
+├── supabase/           ← Database migrations
 └── assets/
     ├── css/
     │   └── style.css
