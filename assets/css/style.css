@@ -850,13 +850,39 @@ p.mix { border-style: dotted dashed solid double; }
 }
 
 @media print {
-  @page { size: A4 portrait; margin: 0; }
+  @page { size: letter portrait; margin: 0; }
   html, body { background: #fff; }
-  .topnav, #loader, .sheet-toolbar, .unity-resource, .unity-sheet { display: none !important; }
+  .topnav, #loader, .sheet-toolbar, .unity-resource, .unity-sheet, .sheet-page-title { display: none !important; }
   #content, .container, .sheet-app { display: block; width: auto; max-width: none; margin: 0; padding: 0; background: #fff; }
-  .sheet-page { min-height: 0; height: 297mm; padding: 12mm 14mm; box-shadow: none; break-after: page; }
+  .sheet-page { min-height: 0; height: 279.4mm; padding: 5mm 10mm; border: 0; background-color: #fff; background-image: linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.86)), url('../images/texture.png'); box-shadow: none; break-after: page; }
   .sheet-page:last-child { break-after: auto; }
   .sheet-page + .sheet-page { margin-top: 0; }
-  .sheet-page input, .sheet-page select, .sheet-page textarea { color: #000; }
-  .sheet-page textarea { resize: none; }
+  .sheet-page::before, .sheet-page::after { display: none; }
+  .sheet-page input, .sheet-page select, .sheet-page textarea { color: #000; font-size: 12px; }
+  .sheet-page input, .sheet-page select { padding: 2px 1px; }
+  .sheet-page select { appearance: none; -webkit-appearance: none; }
+  .sheet-page textarea { min-height: 0; padding: 3px 2px; border: 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent 14px, rgba(45, 45, 45, 0.8) 14px, rgba(45, 45, 45, 0.8) 15px); resize: none; line-height: 1.15; }
+  .sheet-page label { color: #111; font: 12px Georgia, 'Times New Roman', serif; letter-spacing: 0; text-transform: none; }
+  .sheet-page .sheet-masthead { margin: -4px 0 10px; padding-bottom: 6px; }
+  .sheet-page .sheet-brand { font-size: 48px; letter-spacing: 3px; }
+  .sheet-page .sheet-subtitle { margin-top: 5px; font-size: 10px; letter-spacing: 4px; }
+  .sheet-page .identity-grid { gap: 5px 16px; margin-bottom: 8px; }
+  .sheet-page .sheet-section-title { display: flex; align-items: center; gap: 8px; margin: 7px 0 4px; border: 0; padding: 0; font-size: 15px; letter-spacing: 1px; }
+  .sheet-page .sheet-section-title::before, .sheet-page .sheet-section-title::after { content: ''; flex: 1; border-top: 2px dashed #302d28; }
+  .sheet-page .attribute-columns, .sheet-page .skill-columns { gap: 10px; }
+  .sheet-page .attribute-group { padding-right: 10px; }
+  .sheet-page .attribute-group h2, .sheet-page .subheading { margin: 2px 0 5px; font-size: 11px; }
+  .sheet-page .tracker-row { gap: 4px; margin: 3px 0; }
+  .sheet-page .tracker-row label, .sheet-page .skill-row label { font: 11px Georgia, 'Times New Roman', serif; }
+  .sheet-page .dot, .sheet-page .box { width: 12px; height: 12px; }
+  .sheet-page .skill-columns { margin-bottom: 6px; }
+  .sheet-page .skill-row, .sheet-page .line-row { gap: 4px; margin: 2px 0; }
+  .sheet-page .line-row { min-height: 16px; }
+  .sheet-page .lower-grid, .sheet-page .page-two-grid { gap: 14px; }
+  .sheet-page-two .page-two-grid { grid-template-columns: 1fr 2fr; }
+  .sheet-page .resource-trackers { padding-left: 10px; }
+  .sheet-page .resource-trackers label:not(.despair-toggle) { margin-top: 7px; }
+  .sheet-page .box-heading { margin: 6px 0 3px; font-size: 13px; }
+  .sheet-page .bio-meta { gap: 8px; margin-bottom: 6px; }
+  .sheet-page .page-two-grid textarea { margin: 2px 0 8px; }
 }
