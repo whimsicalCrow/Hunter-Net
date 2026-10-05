@@ -155,6 +155,19 @@ To deploy to GitHub Pages:
 4. Choose `main` branch
 5. Site goes live at `https://yourusername.github.io/Hunter-Net`
 
+## Supabase Username Accounts
+
+The login and sign-up forms accept usernames and passwords only. Supabase Auth requires an email-shaped identifier internally, so Hunter-Net maps each username to a reserved `example.com` alias; passwords remain managed by Supabase Auth.
+
+Before using username-only sign-up:
+
+1. Run [`supabase/username-auth-migration.sql`](supabase/username-auth-migration.sql) in the Supabase SQL Editor after the main Hunter-Net schema has been installed.
+2. In Supabase Authentication settings, turn on **Allow new users to sign up**, keep the Email provider enabled, and turn **Confirm email** off. These generated addresses cannot receive confirmation or password-reset messages.
+3. Add `https://yourusername.github.io/Hunter-Net/pages/main.html` to the Supabase Auth redirect URL allow list.
+4. Usernames must be 3-24 letters, numbers, or underscores. They are stored lowercase and must be unique.
+
+Existing accounts created with real email addresses are not automatically converted to username aliases. Migrate them deliberately or create new accounts after applying the username migration. Since there is no recovery email, lost passwords require administrator intervention.
+
 ---
 
 ## Questions or Issues?

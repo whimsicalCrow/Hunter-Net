@@ -13,12 +13,14 @@
           <span class="session-user" aria-live="polite"></span>
           <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
-          <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
+          <a href="./monsters.html">Archives</a>
           <div class="dropdown"><button class="dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>
           <a href="./contact.html">Contact</a>
           <a class="active" href="./credits.html">Credits</a>
-          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
+          <a class="darkpack-link" href="https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement" target="_blank" rel="noopener noreferrer" aria-label="Dark Pack Agreement" title="Dark Pack Agreement"><img src="../assets/images/darkpack_logo2.png" alt="Dark Pack"></a>
         </div>
+
+        <h1 class="page-title"><span>Credits</span></h1>
 
         <table>
           <tr>
@@ -26,10 +28,10 @@
               <div class="text-left padded-left-right-50">
                 <blockquote class="dashed-panel">
                   <p class="text-white">
-                    <span class="text-xl"><strong><tt>Credits</tt></strong></span><br>
                     This website is a fan project, and not official World of Darkness material.<br>
                     Portions of the materials are copyrights and trademarks of White Wolf Entertainment AB and are used under the Dark Pack.
                   </p>
+                  <p class="text-white">Archive material is adapted from <a href="https://htr.paradoxwikis.com/Supernatural_threats" target="_blank" rel="noopener noreferrer">Supernatural threats</a> and <a href="https://htr.paradoxwikis.com/Rival_organizations" target="_blank" rel="noopener noreferrer">Rival organizations</a> by contributors to the <a href="https://htr.paradoxwikis.com/Hunter_The_Reckoning_Wiki" target="_blank" rel="noopener noreferrer">Hunter: The Reckoning Wiki</a>, under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> license. Category notes are paraphrased; names and examples are credited to the source.</p>
                 </blockquote>
               </div>
             </td>
@@ -40,6 +42,8 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
   </body>

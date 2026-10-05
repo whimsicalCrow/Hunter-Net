@@ -67,16 +67,16 @@ For detailed setup instructions, see [SETUP.md](SETUP.md)
 
 ## Architecture
 
-Hunter-Net is a static frontend. It currently has no backend or persistent user account service.
+Hunter-Net is a static frontend hosted on GitHub Pages, with Supabase providing authentication, archive storage, and realtime chat.
 
 - **HTML** contains page content and declarative `data-*` hooks.
 - **CSS** contains shared layout, component, and character-sheet presentation.
 - **JavaScript** contains browser behavior, separated by feature instead of embedded in HTML.
 - **serve.py** and **serve.js** are local development servers only; GitHub Pages serves the static files directly.
 
-The shared navigation supports a temporary name-only session. A visitor can enter a display name without verification; it is stored in browser `localStorage` under `hunter-net-session-name`, restored on later page loads, and removed by **Log out**. This is a convenience identity, not authentication, and it is limited to the current browser profile.
+The shared navigation reads the current Supabase Auth session and profile. Sign-up and login accept a username and password; Supabase Auth uses a generated reserved `example.com` alias internally because its password provider requires an email-shaped identifier. See [SETUP.md](SETUP.md) for the required confirmation settings and existing-account limitations.
 
-The signup form is intentionally a frontend placeholder. It validates the form locally and directs users to the Contact page because no account API exists yet.
+The Archives page reads and updates `archive_entries` with realtime subscriptions. The Contact page uses `chat_messages` for signed-in users. Row-level security policies control database access; the browser publishable key is not an authorization secret.
 
 ## File Organization
 

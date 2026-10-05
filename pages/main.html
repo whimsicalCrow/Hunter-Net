@@ -29,19 +29,10 @@
 
           <a class="active" href="./main.html">Home</a>
 
-          <div class="dropdown">
-            <button class="dropbtn">Archives
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="./monsters.html">The Quarry</a>
-            </div>
-          </div>
+          <a href="./monsters.html">Archives</a>
 
           <div class="dropdown">
-            <button class="dropbtn">Resources
-              <i class="fa fa-caret-down"></i>
-            </button>
+            <button class="dropbtn">Resources</button>
             <div class="dropdown-content">
               <a href="./sheet.html">Character Sheet</a>
               <a href="./quickplay.html">Quick-Play Rules</a>
@@ -51,8 +42,10 @@
           <a href="./contact.html">Contact</a>
           <a href="./credits.html">Credits</a>
 
-          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
+          <a class="darkpack-link" href="https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement" target="_blank" rel="noopener noreferrer" aria-label="Dark Pack Agreement" title="Dark Pack Agreement"><img src="../assets/images/darkpack_logo2.png" alt="Dark Pack"></a>
         </div>
+
+        <h1 class="page-title"><span>Home</span></h1>
 
         <table>
           <tr>
@@ -89,6 +82,8 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
   </body>

@@ -14,12 +14,7 @@
           <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
 
           <a href="./main.html">Home</a>
-          <div class="dropdown">
-            <button class="dropbtn active-dropbtn">Archives</button>
-            <div class="dropdown-content">
-              <a href="./monsters.html">The Quarry</a>
-            </div>
-          </div>
+          <a class="active" href="./monsters.html">Archives</a>
           <div class="dropdown">
             <button class="dropbtn">Resources</button>
             <div class="dropdown-content">
@@ -29,7 +24,7 @@
           </div>
           <a href="./contact.html">Contact</a>
           <a href="./credits.html">Credits</a>
-          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
+          <a class="darkpack-link" href="https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement" target="_blank" rel="noopener noreferrer" aria-label="Dark Pack Agreement" title="Dark Pack Agreement"><img src="../assets/images/darkpack_logo2.png" alt="Dark Pack"></a>
         </div>
 
         <div class="archive-page">
@@ -38,6 +33,7 @@
           <div class="archive-actions">
             <button id="archive-add-button" class="archive-add-button" type="button">Add Entry</button>
           </div>
+          <p id="archive-status" class="archive-status" role="status" aria-live="polite"></p>
 
           <form id="archive-entry-form" class="archive-entry-form" hidden>
             <label>
@@ -45,8 +41,16 @@
               <input id="archive-entry-name" type="text" maxlength="80" required>
             </label>
             <label>
+              <span>Category</span>
+              <input id="archive-entry-category" type="text" maxlength="120">
+            </label>
+            <label>
               <span>Description</span>
               <textarea id="archive-entry-description" rows="4" maxlength="500" required></textarea>
+            </label>
+            <label>
+              <span>Key Notes</span>
+              <textarea id="archive-entry-key-notes" rows="3" maxlength="1000"></textarea>
             </label>
             <label>
               <span>Type</span>
@@ -73,7 +77,7 @@
             </div>
           </form>
 
-          <div class="archive-panel">
+          <div class="archive-panel" id="archive-panel">
             <div class="archive-header">
               <span>Name</span>
               <span>Record Type</span>
@@ -82,41 +86,39 @@
 
             <details class="archive-dir">
               <summary>
-                <span class="archive-name">QUARRY (SUPERNATURAL THREATS)/</span>
+                <span class="archive-name">QUARRY/</span>
                 <span class="archive-modified">-</span>
                 <span class="archive-size">5</span>
               </summary>
               <div class="archive-subtree">
-                <div class="archive-file"><span class="archive-name"><strong>QUARRY_01_VAMPIRES.DAT</strong><span class="archive-description"><strong>Vampires</strong><br>Description: Information on timeless blood-drinkers hiding within human society, operating via shell companies, cults, and thralls. Known to feed on human blood, bend emotions, and masquerade as ordinary people ranging from bartenders to corporate executives.<br><strong>Key Notes:</strong> Vulnerable to fire and staking; capable of turning victims into ghouls or new bloodsuckers.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>QUARRY_02_WEREWOLVES.DAT</strong><span class="archive-description"><strong>Werewolves</strong><br>Description: Ravening shapeshifters and apex predators enforcing a furious primitivism against human development and progress. Known to stalk wilderness areas, borderlands, and urban edges.<br><strong>Key Notes:</strong> Highly volatile and capable of extreme physical violence.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>QUARRY_03_SORCERERS.DAT</strong><span class="archive-description"><strong>Sorcerers</strong><br>Description: Warlocks, magi, and practitioners of esoteric rites who bend reality, weave curses, and perform blood or ritual magic with little regard for mortal collateral.<br><strong>Key Notes:</strong> Often construct cults or employ enchanted techno-fetishes and minion networks to execute multi-stage schemes.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>QUARRY_04_GHOSTS.DAT</strong><span class="archive-description"><strong>Ghosts</strong><br>Description: Restless apparitions and lingering spirits manifesting from beyond the veil of death to possess the living or haunt locations associated with their mortal pasts.<br><strong>Key Notes:</strong> Often bound by unfinished business or past downfalls; require specialized exorcism or resolution tactics rather than conventional weapons.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>QUARRY_05_FAIR_FOLK_OTHERS.DAT</strong><span class="archive-description"><strong>Fair Folk &amp; Others</strong><br>Description: Enigmatic entities, otherworldly “good folk,” and anomalies operating at the forgotten margins of human perception and physical reality.<br><strong>Key Notes:</strong> Includes liminal threats such as impossible spatial distortions and hand-drawn entryways that cause memory lapses or blackouts.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>VAMPIRES.DAT</strong><span class="archive-description"><strong>Vampires</strong><br>Description: Information on timeless blood-drinkers hiding within human society, operating via shell companies, cults, and thralls. Known to feed on human blood, bend emotions, and masquerade as ordinary people ranging from bartenders to corporate executives.<br><strong>Key Notes:</strong> Vulnerable to fire and staking; capable of turning victims into ghouls or new bloodsuckers.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>WEREWOLVES.DAT</strong><span class="archive-description"><strong>Werewolves</strong><br>Description: Ravening shapeshifters and apex predators enforcing a furious primitivism against human development and progress. Known to stalk wilderness areas, borderlands, and urban edges.<br><strong>Key Notes:</strong> Highly volatile and capable of extreme physical violence.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>SORCERERS.DAT</strong><span class="archive-description"><strong>Sorcerers</strong><br>Description: Warlocks, magi, and practitioners of esoteric rites who bend reality, weave curses, and perform blood or ritual magic with little regard for mortal collateral.<br><strong>Key Notes:</strong> Often construct cults or employ enchanted techno-fetishes and minion networks to execute multi-stage schemes.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>GHOSTS.DAT</strong><span class="archive-description"><strong>Ghosts</strong><br>Description: Restless apparitions and lingering spirits manifesting from beyond the veil of death to possess the living or haunt locations associated with their mortal pasts.<br><strong>Key Notes:</strong> Often bound by unfinished business or past downfalls; require specialized exorcism or resolution tactics rather than conventional weapons.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>FAIR_FOLK.DAT</strong><span class="archive-description"><strong>Fair Folk &amp; Others</strong><br>Description: Enigmatic entities, otherworldly “good folk,” and anomalies operating at the forgotten margins of human perception and physical reality.<br><strong>Key Notes:</strong> Includes liminal threats such as impossible spatial distortions and hand-drawn entryways that cause memory lapses or blackouts.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
               </div>
             </details>
 
             <details class="archive-dir">
               <summary>
-                <span class="archive-name">ORGS (RIVAL ORGANIZATIONS &amp; JOBBERS)/</span>
+                <span class="archive-name">ORGS/</span>
                 <span class="archive-modified">-</span>
                 <span class="archive-size">8</span>
               </summary>
               <div class="archive-subtree">
-                <div class="archive-file"><span class="archive-name"><strong>ORG_01_SAD_FBI.DAT</strong><span class="archive-description"><strong>Special Affairs Division (FBI)</strong><br>Description: Special Affairs Division of the U.S. Federal Bureau of Investigation. A governmental agency investigating “unusual threats” and terrorism, often maintaining bureaucratic protocols and treating independent cells as rogue vigilantes or liabilities.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_02_IAO.DAT</strong><span class="archive-description"><strong>Information Awareness Office</strong><br>Description: Information Awareness Office. A high-surveillance intelligence enterprise competing for jurisdiction over unusual threat investigations, data collection, and field ops.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_03_ST_LEOPOLD.DAT</strong><span class="archive-description"><strong>Society of St. Leopold</strong><br>Description: Society of St. Leopold. A long-standing religious institution dedicated to purging monsters, primarily vampires, though driven by institutional dominance and internal hierarchy rather than individual Drive.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_04_ARCANUM.DAT</strong><span class="archive-description"><strong>The Arcanum</strong><br>Description: The Arcanum. An organization focused on studying, cataloging, and archiving esoteric and occult lore, frequently prioritizing institutional acquisition over field intervention.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_05_MONSTER_X.DAT</strong><span class="archive-description"><strong>Monster-X / Corporate UTR</strong><br>Description: Monster-X, a privatized corporate monster-hunting contractor using corporate branding, NDA agreements, 401(k) benefits, and PR campaigns to profit from Unusual Threat Response.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_06_BOPE_RJ.DAT</strong><span class="archive-description"><strong>BOPE-RJ (BOES of Rio de Janeiro)</strong><br>Description: Specialized paramilitary police response units dealing with urban supernatural intrusions and heavy tactical operations.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_07_SPECIAL_REHAB.DAT</strong><span class="archive-description"><strong>Manila Department of Justice: Special Rehabilitation Program</strong><br>Description: A state-sanctioned initiative addressing supernatural phenomena and compromised individuals under government oversight.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
-                <div class="archive-file"><span class="archive-name"><strong>ORG_08_OTHER_ORGS.DAT</strong><span class="archive-description"><strong>Other Organizations</strong><br>Description: Index of regional and specialized cells and factions.<br><strong>Includes:</strong> The Nails of Christ; The Order of the Rose; Orpheus Group; Re:Venge; The Coalition, a multinational joint task force deploying UTR military teams.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>SAD_FBI.DAT</strong><span class="archive-description"><strong>Special Affairs Division (FBI)</strong><br>Description: Special Affairs Division of the U.S. Federal Bureau of Investigation. A governmental agency investigating “unusual threats” and terrorism, often maintaining bureaucratic protocols and treating independent cells as rogue vigilantes or liabilities.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>IAO.DAT</strong><span class="archive-description"><strong>Information Awareness Office</strong><br>Description: Information Awareness Office. A high-surveillance intelligence enterprise competing for jurisdiction over unusual threat investigations, data collection, and field ops.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ST_LEOPOLD.DAT</strong><span class="archive-description"><strong>Society of St. Leopold</strong><br>Description: Society of St. Leopold. A long-standing religious institution dedicated to purging monsters, primarily vampires, though driven by institutional dominance and internal hierarchy rather than individual Drive.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ARCANUM.DAT</strong><span class="archive-description"><strong>The Arcanum</strong><br>Description: The Arcanum. An organization focused on studying, cataloging, and archiving esoteric and occult lore, frequently prioritizing institutional acquisition over field intervention.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>MONSTER_X.DAT</strong><span class="archive-description"><strong>Monster-X / Corporate UTR</strong><br>Description: Monster-X, a privatized corporate monster-hunting contractor using corporate branding, NDA agreements, 401(k) benefits, and PR campaigns to profit from Unusual Threat Response.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>BOPE_RJ.DAT</strong><span class="archive-description"><strong>BOPE-RJ (BOES of Rio de Janeiro)</strong><br>Description: Specialized paramilitary police response units dealing with urban supernatural intrusions and heavy tactical operations.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>SPECIAL_REHAB.DAT</strong><span class="archive-description"><strong>Manila Department of Justice: Special Rehabilitation Program</strong><br>Description: A state-sanctioned initiative addressing supernatural phenomena and compromised individuals under government oversight.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>OTHERS.DAT</strong><span class="archive-description"><strong>Other Organizations</strong><br>Description: Index of regional and specialized cells and factions.<br><strong>Includes:</strong> The Nails of Christ; The Order of the Rose; Orpheus Group; Re:Venge; The Coalition, a multinational joint task force deploying UTR military teams.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
               </div>
             </details>
           </div>
 
           <div id="user-archive-root" class="archive-user-root"></div>
-
-          <p class="archive-attribution">Adapted from <a href="https://htr.paradoxwikis.com/Supernatural_threats" target="_blank" rel="noopener noreferrer">Supernatural threats</a> and <a href="https://htr.paradoxwikis.com/Rival_organizations" target="_blank" rel="noopener noreferrer">Rival organizations</a> by contributors to the <a href="https://htr.paradoxwikis.com/Hunter_The_Reckoning_Wiki" target="_blank" rel="noopener noreferrer">Hunter: The Reckoning Wiki</a>. Available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Category notes are paraphrased; names and examples are credited to the source.</p>
         </div>
 
         <div>
@@ -125,10 +127,15 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
+    <script src="../assets/js/archive.js"></script>
     <script>
       (function () {
+        if (window.hunterNetSupabase) return;
+
         const storageKey = 'hunter-net-archive-entries';
         const addButton = document.getElementById('archive-add-button');
         const form = document.getElementById('archive-entry-form');

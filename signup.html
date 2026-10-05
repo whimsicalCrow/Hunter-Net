@@ -6,53 +6,30 @@
     <title>Sign Up | hunter-net.org</title>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body>
+  <body class="auth-page">
     <div id="loader"></div>
     <div id="content">
-      <div class="container">
-        <div class="box box1">
-          <div class="row">
-            <div class="column"><img src="assets/images/left1.png" alt="Left" class="header-side-img"></div>
-            <div class="column"><img src="assets/images/titlealt2.png" alt="Hunter-Net" class="header-title-img"></div>
-            <div class="column"><img src="assets/images/right1.png" alt="Right" class="header-side-img"></div>
-          </div>
-        </div>
+      <main class="auth-shell">
+        <section class="auth-panel">
+          <h1 class="page-title"><span>Sign Up</span></h1>
+          <p class="warning-text"><strong>Request Authorization </strong></p>
+          <form id="signup-form" class="auth-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" title="Use 3-24 letters, numbers, or underscores." required autocomplete="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="new-password">
+            <button id="signup-button" type="submit">Submit</button>
+          </form>
+          <p id="signup-message" class="auth-message" role="status" aria-live="polite"></p>
+          <p class="auth-links"><a href="pages/index.html">Return to sign in</a></p>
+        </section>
+      </main>
 
-        <nav class="topnav" aria-label="Main navigation">
-          <a href="index.html">Enter session</a>
-          <a href="pages/main.html">Home</a>
-          <div class="dropdown"><button class="dropbtn" type="button">Archives</button><div class="dropdown-content"><a href="pages/monsters.html">The Quarry</a></div></div>
-          <div class="dropdown"><button class="dropbtn" type="button">Resources</button><div class="dropdown-content"><a href="pages/sheet.html">Character Sheet</a><a href="pages/quickplay.html">Quick-Play Rules</a></div></div>
-          <a href="pages/contact.html">Contact</a>
-          <a href="pages/credits.html">Credits</a>
-          <img src="assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
-        </nav>
-
-        <main class="signup-form">
-          <table class="signup-table">
-            <tr><td class="signup-table-cell">
-              <div class="text-left">
-                <blockquote class="dashed-panel">
-                  <h1 class="signup-heading">Sign Up</h1>
-                  <form id="signup-form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <button id="signup-button" type="submit">Sign Up</button>
-                  </form>
-                  <p id="signup-message" role="status" aria-live="polite" class="signup-message"></p>
-                </blockquote>
-              </div>
-            </td></tr>
-          </table>
-        </main>
-
-        <img src="assets/images/unity.png" alt="Bottom" class="unity-standard">
-      </div>
+      <div id="footer">WARNING: DO NOT ENTER YOUR REAL NAME OR OTHER PERSONAL IDENTIFICATION. THE CONFIDENTIALITY OF INFORMATION ON THIS SITE CANNOT BE GUARANTEED.</div>
+      <img src="assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase-client.js"></script>
     <script src="assets/js/loader.js"></script>
     <script src="assets/js/signup.js"></script>
   </body>

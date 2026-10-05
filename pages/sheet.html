@@ -13,18 +13,19 @@
           <span class="session-user" aria-live="polite"></span>
           <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
-          <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
+          <a href="./monsters.html">Archives</a>
           <div class="dropdown"><button class="dropbtn active-dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>
           <a href="./contact.html">Contact</a>
           <a href="./credits.html">Credits</a>
-          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
+          <a class="darkpack-link" href="https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement" target="_blank" rel="noopener noreferrer" aria-label="Dark Pack Agreement" title="Dark Pack Agreement"><img src="../assets/images/darkpack_logo2.png" alt="Dark Pack"></a>
         </div>
+
+        <h1 class="page-title"><span>Character Sheet</span></h1>
 
         <main class="sheet-app">
           <div class="sheet-toolbar">
             <div>
               <p class="sheet-kicker">Hunter: The Reckoning</p>
-              <h1>Character Sheet</h1>
               <p class="sheet-status" id="sheet-status" aria-live="polite">Your changes are saved in this browser.</p>
             </div>
             <div class="sheet-actions">
@@ -93,9 +94,12 @@
             </section>
           </form>
         </main>
+        <img src="../assets/images/unity.png" alt="Bottom" class="unity-sheet">
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
     <script src="../assets/js/sheet.js"></script>

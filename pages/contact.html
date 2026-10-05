@@ -13,12 +13,14 @@
           <span class="session-user" aria-live="polite"></span>
           <button class="session-action" type="button" data-action="logout" hidden>Log out</button>
           <a href="./main.html">Home</a>
-          <div class="dropdown"><button class="dropbtn">Archives</button><div class="dropdown-content"><a href="./monsters.html">The Quarry</a></div></div>
+          <a href="./monsters.html">Archives</a>
           <div class="dropdown"><button class="dropbtn">Resources</button><div class="dropdown-content"><a href="./sheet.html">Character Sheet</a><a href="./quickplay.html">Quick-Play Rules</a></div></div>
           <a class="active" href="./contact.html">Contact</a>
           <a href="./credits.html">Credits</a>
-          <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
+          <a class="darkpack-link" href="https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement" target="_blank" rel="noopener noreferrer" aria-label="Dark Pack Agreement" title="Dark Pack Agreement"><img src="../assets/images/darkpack_logo2.png" alt="Dark Pack"></a>
         </div>
+
+        <h1 class="page-title"><span>Contact</span></h1>
 
         <div>
           <center>
@@ -27,22 +29,25 @@
             <proxi-map data-id="6ac386f52eb012635f8252b8"></proxi-map>
             </div>
           </center>
-          <table class="contact-chat-table"><tbody><tr><td>
-            <center>
-              <div id="chat-container" class="external-service">
-                <iframe src="https://www5.cbox.ws/box/?boxid=940074&boxtag=pTsjkB" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	                
-                <p id="chat-fallback" hidden>
-                  Chat service unavailable.
-                </p>
-              </div>
-            </center>
-          </td></tr></tbody></table>
+          <section id="chat-container" class="realtime-chat" aria-labelledby="chat-title">
+            <h2 id="chat-title">Field Chat</h2>
+            <p id="chat-status" role="status" aria-live="polite">Connecting to secure channel...</p>
+            <p id="chat-auth-note" hidden>Sign in to read or send messages. <a href="./index.html">Sign in</a> or <a href="../signup.html">request an account</a>.</p>
+            <ol id="chat-messages" aria-label="Recent chat messages" aria-live="polite"></ol>
+            <form id="chat-form" hidden>
+              <label class="chat-composer-label" for="chat-message">Message</label>
+              <textarea id="chat-message" maxlength="2000" rows="3" required></textarea>
+              <button type="submit" id="chat-send-button">Send</button>
+            </form>
+          </section>
         </div>
         
         <img src="../assets/images/unity.png" alt="Bottom" class="unity-contact">
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
     <script src="../assets/js/contact.js"></script>

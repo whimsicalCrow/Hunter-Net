@@ -5,23 +5,30 @@
     <title>hunter-net.org</title>
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body>
+  <body class="auth-page">
     <div id="loader"></div>
     <div id="content">
-      <div class="container">
-        <div class="center">
-          <p class="warning-text"><strong>NOT SAFE YET -- THEY'RE WATCHING</strong></p>
-          <form id="access-form">
-            <label for="name">Enter your name</label>
-            <input type="text" id="name" name="name" maxlength="40" required autocomplete="nickname">
-            <input type="submit" value="Enter">
+      <main class="auth-shell">
+        <section class="auth-panel">
+          <h1 class="page-title"><span>Sign In</span></h1>
+          <p class="warning-text"><strong>Secure Network // Authorized Users Only</strong></p>
+          <form id="access-form" class="auth-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" title="Use 3-24 letters, numbers, or underscores." required autocomplete="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
+            <button type="submit">Enter</button>
           </form>
-        </div>
+          <p id="access-message" class="auth-message" role="status" aria-live="polite"></p>
+          <p class="auth-links"><a href="../signup.html">Request authorization</a></p>
+        </section>
+      </main>
 
-        <div id="footer">Your name is saved only in this browser.</div>
-        <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
-      </div>
+      <div id="footer">WARNING: DO NOT ENTER YOUR REAL NAME OR OTHER PERSONAL IDENTIFICATION. THE CONFIDENTIALITY OF INFORMATION ON THIS SITE CANNOT BE GUARANTEED.</div>
+      <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/supabase-client.js"></script>
     <script src="../assets/js/loader.js"></script>
     <script src="../assets/js/auth.js"></script>
   </body>
