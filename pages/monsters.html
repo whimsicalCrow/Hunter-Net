@@ -32,26 +32,92 @@
           <img src="../assets/images/darkpack_logo2.png" alt="copyright" class="darkpack-logo">
         </div>
 
-        <table>
-          <tr>
-            <td class="content-column-30">
-              <div class="text-left padded-left-right-50">
-                <blockquote class="dashed-panel">
-                  <p class="text-white"><span class="text-xl"><strong><tt>Monsters</tt></strong></span></p>
-                  <p class="text-white">Monster archive overview preserved.</p>
-                </blockquote>
-                <div class="float-left margin-left-50">
-                  <a href="https://whitewolf.fandom.com/wiki/Vampire_(WOD)" target="_blank"><img src="../assets/images/folder.png" title="Kindred" class="folder-icon"></a>
-                  <a href="https://whitewolf.fandom.com/wiki/Mage_(WOD)" target="_blank"><img src="../assets/images/folder.png" title="Mages" class="folder-icon"></a>
-                  <a href="https://whitewolf.fandom.com/wiki/Werewolf_(WOD)" target="_blank"><img src="../assets/images/folder.png" title="Werewolves" class="folder-icon"></a>
-                  <a href="https://whitewolf.fandom.com/wiki/Wraith" target="_blank"><img src="../assets/images/folder.png" title="Wraiths" class="folder-icon"></a>
-                  <a href="https://whitewolf.fandom.com/wiki/Changeling_(WOD)" target="_blank"><img src="../assets/images/folder.png" title="Changelings" class="folder-icon"></a>
-                  <div class="clear-both"></div>
-                </div>
+        <div class="archive-page">
+          <h1 class="archive-title"><span>Archives</span></h1>
+
+          <div class="archive-actions">
+            <button id="archive-add-button" class="archive-add-button" type="button">Add Entry</button>
+          </div>
+
+          <form id="archive-entry-form" class="archive-entry-form" hidden>
+            <label>
+              <span>Name</span>
+              <input id="archive-entry-name" type="text" maxlength="80" required>
+            </label>
+            <label>
+              <span>Description</span>
+              <textarea id="archive-entry-description" rows="4" maxlength="500" required></textarea>
+            </label>
+            <label>
+              <span>Type</span>
+              <select id="archive-entry-type">
+                <option value="entry">Entry</option>
+                <option value="folder">Folder</option>
+              </select>
+            </label>
+            <label>
+              <span>Record Type</span>
+              <select id="archive-entry-record-type" required>
+                <option value="Group">Group</option>
+                <option value="Individual">Individual</option>
+                <option value="Misc">Misc</option>
+              </select>
+            </label>
+            <label>
+              <span>Parent folder</span>
+              <select id="archive-entry-parent"></select>
+            </label>
+            <div class="archive-entry-actions">
+              <button type="submit" class="archive-save-button">Save Entry</button>
+              <button type="button" class="archive-cancel-button" id="archive-entry-cancel">Cancel</button>
+            </div>
+          </form>
+
+          <div class="archive-panel">
+            <div class="archive-header">
+              <span>Name</span>
+              <span>Record Type</span>
+              <span>Entries</span>
+            </div>
+
+            <details class="archive-dir">
+              <summary>
+                <span class="archive-name">QUARRY (SUPERNATURAL THREATS)/</span>
+                <span class="archive-modified">-</span>
+                <span class="archive-size">5</span>
+              </summary>
+              <div class="archive-subtree">
+                <div class="archive-file"><span class="archive-name"><strong>QUARRY_01_VAMPIRES.DAT</strong><span class="archive-description"><strong>Vampires</strong><br>Description: Information on timeless blood-drinkers hiding within human society, operating via shell companies, cults, and thralls. Known to feed on human blood, bend emotions, and masquerade as ordinary people ranging from bartenders to corporate executives.<br><strong>Key Notes:</strong> Vulnerable to fire and staking; capable of turning victims into ghouls or new bloodsuckers.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>QUARRY_02_WEREWOLVES.DAT</strong><span class="archive-description"><strong>Werewolves</strong><br>Description: Ravening shapeshifters and apex predators enforcing a furious primitivism against human development and progress. Known to stalk wilderness areas, borderlands, and urban edges.<br><strong>Key Notes:</strong> Highly volatile and capable of extreme physical violence.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>QUARRY_03_SORCERERS.DAT</strong><span class="archive-description"><strong>Sorcerers</strong><br>Description: Warlocks, magi, and practitioners of esoteric rites who bend reality, weave curses, and perform blood or ritual magic with little regard for mortal collateral.<br><strong>Key Notes:</strong> Often construct cults or employ enchanted techno-fetishes and minion networks to execute multi-stage schemes.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>QUARRY_04_GHOSTS.DAT</strong><span class="archive-description"><strong>Ghosts</strong><br>Description: Restless apparitions and lingering spirits manifesting from beyond the veil of death to possess the living or haunt locations associated with their mortal pasts.<br><strong>Key Notes:</strong> Often bound by unfinished business or past downfalls; require specialized exorcism or resolution tactics rather than conventional weapons.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>QUARRY_05_FAIR_FOLK_OTHERS.DAT</strong><span class="archive-description"><strong>Fair Folk &amp; Others</strong><br>Description: Enigmatic entities, otherworldly “good folk,” and anomalies operating at the forgotten margins of human perception and physical reality.<br><strong>Key Notes:</strong> Includes liminal threats such as impossible spatial distortions and hand-drawn entryways that cause memory lapses or blackouts.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
               </div>
-            </td>
-          </tr>
-        </table>
+            </details>
+
+            <details class="archive-dir">
+              <summary>
+                <span class="archive-name">ORGS (RIVAL ORGANIZATIONS &amp; JOBBERS)/</span>
+                <span class="archive-modified">-</span>
+                <span class="archive-size">8</span>
+              </summary>
+              <div class="archive-subtree">
+                <div class="archive-file"><span class="archive-name"><strong>ORG_01_SAD_FBI.DAT</strong><span class="archive-description"><strong>Special Affairs Division (FBI)</strong><br>Description: Special Affairs Division of the U.S. Federal Bureau of Investigation. A governmental agency investigating “unusual threats” and terrorism, often maintaining bureaucratic protocols and treating independent cells as rogue vigilantes or liabilities.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_02_IAO.DAT</strong><span class="archive-description"><strong>Information Awareness Office</strong><br>Description: Information Awareness Office. A high-surveillance intelligence enterprise competing for jurisdiction over unusual threat investigations, data collection, and field ops.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_03_ST_LEOPOLD.DAT</strong><span class="archive-description"><strong>Society of St. Leopold</strong><br>Description: Society of St. Leopold. A long-standing religious institution dedicated to purging monsters, primarily vampires, though driven by institutional dominance and internal hierarchy rather than individual Drive.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_04_ARCANUM.DAT</strong><span class="archive-description"><strong>The Arcanum</strong><br>Description: The Arcanum. An organization focused on studying, cataloging, and archiving esoteric and occult lore, frequently prioritizing institutional acquisition over field intervention.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_05_MONSTER_X.DAT</strong><span class="archive-description"><strong>Monster-X / Corporate UTR</strong><br>Description: Monster-X, a privatized corporate monster-hunting contractor using corporate branding, NDA agreements, 401(k) benefits, and PR campaigns to profit from Unusual Threat Response.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_06_BOPE_RJ.DAT</strong><span class="archive-description"><strong>BOPE-RJ (BOES of Rio de Janeiro)</strong><br>Description: Specialized paramilitary police response units dealing with urban supernatural intrusions and heavy tactical operations.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_07_SPECIAL_REHAB.DAT</strong><span class="archive-description"><strong>Manila Department of Justice: Special Rehabilitation Program</strong><br>Description: A state-sanctioned initiative addressing supernatural phenomena and compromised individuals under government oversight.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+                <div class="archive-file"><span class="archive-name"><strong>ORG_08_OTHER_ORGS.DAT</strong><span class="archive-description"><strong>Other Organizations</strong><br>Description: Index of regional and specialized cells and factions.<br><strong>Includes:</strong> The Nails of Christ; The Order of the Rose; Orpheus Group; Re:Venge; The Coalition, a multinational joint task force deploying UTR military teams.</span></span><span class="archive-modified">Group</span><span class="archive-size">-</span></div>
+              </div>
+            </details>
+          </div>
+
+          <div id="user-archive-root" class="archive-user-root"></div>
+
+          <p class="archive-attribution">Adapted from <a href="https://htr.paradoxwikis.com/Supernatural_threats" target="_blank" rel="noopener noreferrer">Supernatural threats</a> and <a href="https://htr.paradoxwikis.com/Rival_organizations" target="_blank" rel="noopener noreferrer">Rival organizations</a> by contributors to the <a href="https://htr.paradoxwikis.com/Hunter_The_Reckoning_Wiki" target="_blank" rel="noopener noreferrer">Hunter: The Reckoning Wiki</a>. Available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Category notes are paraphrased; names and examples are credited to the source.</p>
+        </div>
 
         <div>
           <img src="../assets/images/unity.png" alt="Bottom" class="unity-monsters">
@@ -61,5 +127,431 @@
 
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/loader.js"></script>
+    <script>
+      (function () {
+        const storageKey = 'hunter-net-archive-entries';
+        const addButton = document.getElementById('archive-add-button');
+        const form = document.getElementById('archive-entry-form');
+        const cancelButton = document.getElementById('archive-entry-cancel');
+        const nameInput = document.getElementById('archive-entry-name');
+        const descriptionInput = document.getElementById('archive-entry-description');
+        const typeInput = document.getElementById('archive-entry-type');
+        const recordTypeInput = document.getElementById('archive-entry-record-type');
+        const recordTypeLabel = recordTypeInput.closest('label');
+        const parentInput = document.getElementById('archive-entry-parent');
+        const userArchiveRoot = document.getElementById('user-archive-root');
+
+        const BUILTIN_FOLDERS = ['Misc', 'Known ORGs', 'Known Quarry'];
+        const RECORD_TYPES = ['Group', 'Individual', 'Misc'];
+
+        recordTypeInput.value = 'Misc';
+        form.hidden = true;
+        addButton.setAttribute('aria-expanded', 'false');
+
+        function escapeHtml(value) {
+          return value
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        }
+
+        function makeArchiveEntriesExpandable() {
+          document.querySelectorAll('.archive-panel .archive-dir > summary .archive-modified').forEach(function (folderType) {
+            folderType.textContent = '-';
+          });
+
+          document.querySelectorAll('.archive-panel .archive-file').forEach(function (row) {
+            const nameCell = row.querySelector('.archive-name');
+            const description = nameCell && nameCell.querySelector('.archive-description');
+            if (!nameCell || !description) return;
+
+            const title = nameCell.querySelector('strong');
+            const details = document.createElement('details');
+            details.className = 'archive-file archive-record';
+
+            const summary = document.createElement('summary');
+            summary.className = 'archive-record-summary';
+            const titleCell = document.createElement('span');
+            titleCell.className = 'archive-name';
+            const titleText = document.createElement('strong');
+            titleText.textContent = title ? title.textContent.trim() : nameCell.textContent.trim();
+            titleCell.appendChild(titleText);
+            summary.appendChild(titleCell);
+
+            const sourceType = row.querySelector('.archive-modified')?.textContent.trim();
+            const recordType = RECORD_TYPES.indexOf(sourceType) >= 0
+              ? sourceType
+              : ['Academic', 'Corporate', 'Government', 'Religious', 'Vigilantes'].indexOf(sourceType) >= 0
+              ? 'Group'
+              : sourceType === 'Creation' ? 'Misc' : 'Individual';
+            const typeCell = document.createElement('span');
+            typeCell.className = 'archive-modified';
+            typeCell.textContent = recordType;
+            summary.appendChild(typeCell);
+
+            const countCell = document.createElement('span');
+            countCell.className = 'archive-size';
+            countCell.textContent = '-';
+            summary.appendChild(countCell);
+
+            const content = document.createElement('div');
+            content.className = 'archive-record-content';
+            content.appendChild(description);
+
+            details.appendChild(summary);
+            details.appendChild(content);
+            row.replaceWith(details);
+          });
+        }
+
+        function normalizeEntries(raw) {
+          if (!Array.isArray(raw)) return [];
+          return raw.map(function (entry) {
+            if (entry && (entry.type === 'folder' || (entry.type !== 'entry' && Array.isArray(entry.children)))) {
+              return {
+                id: entry.id || ('folder-' + Math.random().toString(16).slice(2)),
+                type: 'folder',
+                name: entry.name || 'Untitled Folder',
+                description: entry.description || '',
+                children: Array.isArray(entry.children) ? normalizeEntries(entry.children) : []
+              };
+            }
+            return {
+              id: entry && entry.id ? entry.id : ('entry-' + Math.random().toString(16).slice(2)),
+              type: 'entry',
+              name: entry && entry.name ? entry.name : 'Untitled Entry',
+              description: entry && entry.description ? entry.description : '',
+              recordType: entry && RECORD_TYPES.indexOf(entry.recordType) >= 0 ? entry.recordType : 'Misc',
+              children: []
+            };
+          });
+        }
+
+        function loadEntries() {
+          try {
+            const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+            return normalizeEntries(saved);
+          } catch (error) {
+            return [];
+          }
+        }
+
+        function saveEntries(entries) {
+          localStorage.setItem(storageKey, JSON.stringify(entries));
+        }
+
+        function getFolderOptions() {
+          const options = BUILTIN_FOLDERS.slice();
+          options.push('Misc');
+          const entries = loadEntries();
+
+          function walk(nodes) {
+            nodes.forEach(function (node) {
+              if (node.type === 'folder') {
+                options.push(node.name);
+                if (Array.isArray(node.children)) walk(node.children);
+              }
+            });
+          }
+
+          walk(entries);
+          return Array.from(new Set(options));
+        }
+
+        function refreshParentOptions() {
+          const options = getFolderOptions();
+          const currentValue = parentInput.value || 'Misc';
+          parentInput.innerHTML = options.map(function (folder) {
+            return '<option value="' + escapeHtml(folder) + '">' + escapeHtml(folder) + '</option>';
+          }).join('');
+          if (options.indexOf(currentValue) >= 0) {
+            parentInput.value = currentValue;
+          } else {
+            parentInput.value = 'Misc';
+          }
+        }
+
+        function buildNodeTree(node, level, onEdit, onDelete) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'archive-user-node';
+
+          if (node.type === 'folder') {
+            const section = document.createElement('details');
+            section.className = 'archive-dir archive-user-section';
+            section.dataset.nodeId = String(node.id || '');
+            section.open = false;
+
+            const summary = document.createElement('summary');
+            summary.innerHTML = `
+              <span class="archive-name">${escapeHtml(node.name || 'Untitled Folder')}/</span>
+              <span class="archive-modified">-</span>
+              <span class="archive-size">${(Array.isArray(node.children) ? node.children.length : 0)}</span>
+            `;
+
+            const content = document.createElement('div');
+            content.className = 'archive-subtree';
+
+            if (Array.isArray(node.children) && node.children.length) {
+              node.children.forEach(function (child, idx) {
+                const childNode = buildNodeTree(child, level + 1, onEdit, onDelete);
+                content.appendChild(childNode);
+              });
+            }
+
+            const actions = document.createElement('span');
+            actions.className = 'archive-size archive-entry-actions-inline';
+            actions.innerHTML = `
+              <button type="button" class="archive-inline-action archive-edit-action" data-node-id="${escapeHtml(node.id || '')}" aria-label="Edit folder">✎</button>
+              <button type="button" class="archive-inline-action archive-delete-action" data-node-id="${escapeHtml(node.id || '')}" aria-label="Delete folder">🗑</button>
+            `;
+            summary.appendChild(actions);
+
+            section.appendChild(summary);
+            section.appendChild(content);
+            wrapper.appendChild(section);
+          } else {
+            const item = document.createElement('details');
+            item.className = 'archive-file archive-user-entry archive-record';
+            item.innerHTML = `
+              <summary class="archive-record-summary">
+                <span class="archive-name"><strong>${escapeHtml(node.name || 'Untitled Entry')}</strong></span>
+                <span class="archive-modified">${escapeHtml(node.recordType || 'Misc')}</span>
+                <span class="archive-entry-actions-inline">
+                <button type="button" class="archive-inline-action archive-edit-action" data-node-id="${escapeHtml(node.id || '')}" aria-label="Edit entry">✎</button>
+                <button type="button" class="archive-inline-action archive-delete-action" data-node-id="${escapeHtml(node.id || '')}" aria-label="Delete entry">🗑</button>
+                </span>
+              </summary>
+              <div class="archive-record-content">
+                <span class="archive-description">${escapeHtml(node.description || 'No description provided.')}</span>
+              </div>
+            `;
+            wrapper.appendChild(item);
+          }
+
+          return wrapper;
+        }
+
+        function renderEntries() {
+          const openFolderIds = Array.from(userArchiveRoot.querySelectorAll('details[data-node-id]'))
+            .filter(function (section) {
+              return section.open;
+            })
+            .map(function (section) {
+              return section.dataset.nodeId;
+            });
+
+          const entries = loadEntries();
+          const miscFolder = {
+            id: 'misc-folder',
+            type: 'folder',
+            name: 'Misc',
+            description: '',
+            children: entries
+          };
+
+          userArchiveRoot.innerHTML = '';
+
+          if (!entries.length) {
+            const empty = document.createElement('div');
+            empty.className = 'archive-file';
+            empty.innerHTML = '<span class="archive-name">Misc/</span><span class="archive-modified">-</span><span class="archive-size">0</span>';
+            userArchiveRoot.appendChild(empty);
+            return;
+          }
+
+          const rendered = buildNodeTree(miscFolder, 0, null, null);
+          userArchiveRoot.appendChild(rendered);
+
+          userArchiveRoot.querySelectorAll('details[data-node-id]').forEach(function (section) {
+            section.open = openFolderIds.indexOf(section.dataset.nodeId) >= 0 || section.dataset.nodeId === 'misc-folder';
+          });
+
+          userArchiveRoot.querySelectorAll('.archive-edit-action').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+              const nodeId = button.getAttribute('data-node-id');
+              openEntryEditor(nodeId);
+            });
+          });
+
+          userArchiveRoot.querySelectorAll('.archive-delete-action').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+              const nodeId = button.getAttribute('data-node-id');
+              deleteNodeById(nodeId);
+            });
+          });
+        }
+
+        function findNodeById(nodes, targetId) {
+          for (let i = 0; i < nodes.length; i += 1) {
+            const node = nodes[i];
+            if (node.id === targetId) return { node, parent: nodes, index: i };
+            if (node.type === 'folder' && Array.isArray(node.children)) {
+              const found = findNodeById(node.children, targetId);
+              if (found) return found;
+            }
+          }
+          return null;
+        }
+
+        function deleteNodeById(nodeId) {
+          const entries = loadEntries();
+          const found = findNodeById(entries, nodeId);
+          if (!found) return;
+          found.parent.splice(found.index, 1);
+          saveEntries(entries);
+          renderEntries();
+          refreshParentOptions();
+        }
+
+        function openEntryEditor(nodeId) {
+          const entries = loadEntries();
+          const found = findNodeById(entries, nodeId);
+          if (!found) return;
+
+          form.dataset.editNodeId = String(nodeId);
+          nameInput.value = found.node.name || '';
+          descriptionInput.value = found.node.description || '';
+          typeInput.value = found.node.type || 'entry';
+          recordTypeInput.value = found.node.recordType || 'Misc';
+          updateRecordTypeVisibility();
+          refreshParentOptions();
+          const currentFolder = getParentNameForNode(entries, nodeId) || 'Misc';
+          parentInput.value = currentFolder;
+          toggleEntryForm(true);
+        }
+
+        function getParentNameForNode(nodes, targetId, parentName) {
+          for (let i = 0; i < nodes.length; i += 1) {
+            const node = nodes[i];
+            if (node.id === targetId) return parentName || 'Misc';
+            if (node.type === 'folder' && Array.isArray(node.children)) {
+              const found = getParentNameForNode(node.children, targetId, node.name);
+              if (found) return found;
+            }
+          }
+          return null;
+        }
+
+        function toggleEntryForm(forceOpen) {
+          const shouldShow = typeof forceOpen === 'boolean' ? forceOpen : form.hidden;
+          form.hidden = !shouldShow;
+          addButton.setAttribute('aria-expanded', String(shouldShow));
+
+          if (shouldShow) {
+            refreshParentOptions();
+            nameInput.focus();
+          } else {
+            form.reset();
+            typeInput.value = 'entry';
+            recordTypeInput.value = 'Misc';
+            updateRecordTypeVisibility();
+            delete form.dataset.editIndex;
+            delete form.dataset.editNodeId;
+          }
+        }
+
+        addButton.addEventListener('click', function () {
+          refreshParentOptions();
+          if (!form.dataset.editNodeId) {
+            parentInput.value = 'Misc';
+            typeInput.value = 'entry';
+            recordTypeInput.value = 'Misc';
+          }
+          toggleEntryForm();
+        });
+
+        function updateRecordTypeVisibility() {
+          const isEntry = typeInput.value === 'entry';
+          recordTypeLabel.hidden = !isEntry;
+          recordTypeInput.required = isEntry;
+        }
+
+        typeInput.addEventListener('change', updateRecordTypeVisibility);
+
+        cancelButton.addEventListener('click', function () {
+          toggleEntryForm(false);
+        });
+
+        function insertNodeAtParent(rootNodes, parentName, newNode) {
+          if (!parentName || parentName === 'Misc') {
+            rootNodes.push(newNode);
+            return;
+          }
+
+          for (let i = 0; i < rootNodes.length; i += 1) {
+            const node = rootNodes[i];
+            if (node.type === 'folder' && node.name === parentName) {
+              node.children = Array.isArray(node.children) ? node.children : [];
+              node.children.push(newNode);
+              return;
+            }
+            if (node.type === 'folder' && Array.isArray(node.children)) {
+              const inside = insertNodeAtParent(node.children, parentName, newNode);
+              if (inside) return;
+            }
+          }
+        }
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const name = nameInput.value.trim();
+          const description = descriptionInput.value.trim();
+          const parentName = parentInput.value || 'Misc';
+          const type = typeInput.value || 'entry';
+          const recordType = recordTypeInput.value || 'Misc';
+
+          if (!name || !description) {
+            return;
+          }
+
+          const entries = loadEntries();
+          const editNodeId = form.dataset.editNodeId;
+
+          if (editNodeId) {
+            const found = findNodeById(entries, editNodeId);
+            if (found) {
+              found.node.name = name;
+              found.node.description = description;
+              found.node.type = type;
+              if (type === 'entry') {
+                found.node.recordType = recordType;
+              } else {
+                delete found.node.recordType;
+              }
+            }
+          } else {
+            const newNode = {
+              id: (type + '-' + Date.now().toString(16) + '-' + Math.random().toString(16).slice(2)),
+              type: type,
+              name: name,
+              description: description,
+              recordType: type === 'entry' ? recordType : '',
+              children: type === 'folder' ? [] : []
+            };
+
+            insertNodeAtParent(entries, parentName, newNode);
+          }
+
+          saveEntries(entries);
+          renderEntries();
+          refreshParentOptions();
+          toggleEntryForm(false);
+        });
+
+        makeArchiveEntriesExpandable();
+        updateRecordTypeVisibility();
+        renderEntries();
+        refreshParentOptions();
+        form.hidden = true;
+        addButton.setAttribute('aria-expanded', 'false');
+      })();
+    </script>
   </body>
 </html>

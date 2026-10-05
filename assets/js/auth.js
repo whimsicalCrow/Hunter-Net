@@ -14,6 +14,6 @@
     if (!name) return;
 
     localStorage.setItem(sessionKey, name);
-    window.location.href = 'pages/main.html';
+    window.location.href = './main.html';
   });
 })();

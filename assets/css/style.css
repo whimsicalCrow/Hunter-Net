@@ -205,6 +205,290 @@ p.mix { border-style: dotted dashed solid double; }
   background-blend-mode: lighten;
 }
 
+#map-container {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 10px auto 0;
+}
+
+#map-container proxi-map,
+#map-container iframe {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  background: transparent;
+  border: 0;
+  margin-top: 0;
+}
+
+#chat-container {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.archive-page {
+  margin: 18px auto 0;
+  max-width: 1240px;
+  color: #f0f0f0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: transparent;
+}
+
+.archive-title {
+  margin: 0;
+  padding: 0 0 10px;
+  font-size: clamp(2.6rem, 2vw + 1.8rem, 3.8rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f1f1f1;
+}
+
+.archive-title span {
+  color: #f1f1f1;
+}
+
+.archive-panel {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(10, 12, 18, 0.75);
+  margin-top: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.archive-header,
+.archive-row,
+.archive-dir > summary,
+.archive-file {
+  display: grid;
+  grid-template-columns: minmax(340px, 3fr) minmax(160px, 1fr) minmax(80px, 0.5fr);
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+}
+
+.archive-actions {
+  margin: 16px 0 12px;
+}
+
+.archive-add-button,
+.archive-save-button,
+.archive-cancel-button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: #2b2f38;
+  color: #f3f3f3;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.archive-add-button:hover,
+.archive-save-button:hover,
+.archive-cancel-button:hover {
+  background: #3c414d;
+}
+
+.archive-entry-form {
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 12, 18, 0.7);
+  display: grid;
+  gap: 12px;
+}
+
+.archive-entry-form[hidden] {
+  display: none !important;
+}
+
+.archive-entry-form label {
+  display: grid;
+  gap: 8px;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.archive-entry-form label[hidden] {
+  display: none !important;
+}
+
+.archive-entry-form input,
+.archive-entry-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font: inherit;
+}
+
+.archive-entry-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.archive-entry-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.archive-header {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f1f1;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.archive-row,
+.archive-file {
+  min-height: 30px;
+}
+
+.archive-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.archive-dir {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.archive-dir:last-child {
+  border-bottom: 0;
+}
+
+.archive-dir > summary {
+  list-style: disclosure-closed;
+  cursor: pointer;
+  font-size: 1.02rem;
+  color: #7ea4ff;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.archive-dir[open] > summary {
+  list-style: disclosure-open;
+}
+
+.archive-subtree {
+  padding-left: 28px;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.archive-name {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.archive-user-entry .archive-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.archive-description {
+  display: block;
+  color: #d9d9d9;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.archive-entry-actions-inline {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.archive-inline-action {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #f0f0f0;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.archive-inline-action:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.archive-parent .archive-name a,
+.archive-name a {
+  color: #7ea4ff;
+  text-decoration: none;
+}
+
+.archive-parent .archive-name a:hover,
+.archive-name a:hover {
+  text-decoration: underline;
+}
+
+.archive-modified,
+.archive-size {
+  color: #e9e9e9;
+}
+
+.archive-file {
+  padding-left: 20px;
+  color: #f1f1f1;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.archive-record {
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+.archive-record > summary {
+  display: grid;
+  grid-template-columns: minmax(340px, 3fr) minmax(160px, 1fr) minmax(80px, 0.5fr);
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  cursor: pointer;
+  list-style: disclosure-closed;
+}
+
+.archive-record[open] > summary {
+  list-style: disclosure-open;
+}
+
+.archive-record-summary .archive-name {
+  display: inline;
+}
+
+.archive-record-summary .archive-entry-actions-inline {
+  justify-content: flex-end;
+}
+
+.archive-record-content {
+  display: grid;
+  gap: 6px;
+  padding: 0 16px 12px 44px;
+}
+
+.archive-record-meta {
+  color: #bfc4ce;
+  font-size: 0.9em;
+}
+
+.archive-panel details details .archive-subtree {
+  padding-left: 24px;
+}
+
 #footer {
   position: fixed;
   padding: 10px;
